@@ -3,7 +3,6 @@ import Card from './Card'
 import './List.css';
 
 function List(props) {
-  console.log(props);
   const newCards = props.cards.map(card => 
     <Card title = {card.title} content = {card.content} key = {card.id} />);
 

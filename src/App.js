@@ -21,13 +21,7 @@ function AppHeader(){
 }
 function AppList(prop){
   const Lists = prop.store.lists.map(list => {
-    const cards = list.cardIds.map(id => {
-      const ents = Object.entries(prop.store.allCards);
-        let temp = ents.find(key => key[0] === id);
-      return temp[1];
-    });
-
-
+    const cards = list.cardIds.map(id =>  prop.store.allCards[id]);
     return <List header = {list.header} cards = {cards} key = {list.id}/>
   });
   return (
@@ -38,5 +32,3 @@ function AppList(prop){
 }
 
 export default App;
-
-//return <List header = {list.header} cards = {cards}/>
